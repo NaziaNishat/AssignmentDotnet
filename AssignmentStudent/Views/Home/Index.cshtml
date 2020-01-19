@@ -1,0 +1,13 @@
+﻿@model IEnumerable<AssignmentStudent.Models.Student >
+
+<html>
+<head>
+    <body>
+        @foreach (var student in Model)
+        {
+        <p>@student.id,@student.name,@student.department</p>
+
+        }
+    </body>
+</head>
+</html>

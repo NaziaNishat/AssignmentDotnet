@@ -11,18 +11,60 @@ namespace AssignmentStudent.Controllers
     public class HomeController : Controller
     {
 
-        Repo repo = new Repo();
+        IRepo repo;
+
+        public HomeController(IRepo repoImp)
+        {
+            repo = repoImp;
+        }
 
         public IActionResult Index()
         {
+            //return Ok("Ok");
             var model = repo.getAll();
             return View(model);
         }
 
         public IActionResult GetDetails(int id)
         {
-            var model = repo.retrieve(id);
-            return View(model);
+            //System.Console.WriteLine("hlwwwwwwwwwwwwwww");
+            //System.Diagnostics.Debug.WriteLine("aaaaaaaa");
+
+                        var model = repo.retrieve(id);
+                       return View(model);
+//            return View();
+        }
+
+        public IActionResult Success()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public RedirectToActionResult Create(Student student)
+        {
+            //System.Console.WriteLine("hlwwwwwwwwwwwwwww");
+            //repo.create(student);
+            //Console.WriteLine("Createeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+            Student newStudent = repo.create(student);
+            return RedirectToAction("", new { id = newStudent.id });
+        }
+
+        public IActionResult Edit(int id)
+        {
+            repo.update(id);
+            return View();
+        }
+
+        public IActionResult Delete(int id)
+        {
+            repo.delete(id);
+            return RedirectToAction("");
         }
 
         public IActionResult About()

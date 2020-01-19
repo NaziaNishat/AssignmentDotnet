@@ -7,24 +7,27 @@ namespace AssignmentStudent.Models
 {
     public class Repo : IRepo
     {
-        List<Student> studentsList;
+        List<Student> studentsList = new List<Student>();
+        int i = 1;
 
         public Repo()
         {
-            studentsList = new List<Student>();
+            
             studentsList.Add(new Student { id = 1, name = "nishat", department = "SWE" });
-            studentsList.Add(new Student { id = 2, name = "nazia", department = "SWE" });
 
         }
 
-        public void create(Student obj)
+        public Student create(Student obj)
         {
-            throw new NotImplementedException();
+
+            obj.id = i++;
+            studentsList.Add(obj);
+            return obj;
         }
 
         public void delete(int id)
         {
-            throw new NotImplementedException();
+            studentsList.RemoveAt(id-1);
         }
 
         public List<Student> getAll()
@@ -42,9 +45,7 @@ namespace AssignmentStudent.Models
             throw new NotImplementedException();
         }
 
-        void IRepo.retrieve(int id)
-        {
-            throw new NotImplementedException();
-        }
+
+
     }
 }

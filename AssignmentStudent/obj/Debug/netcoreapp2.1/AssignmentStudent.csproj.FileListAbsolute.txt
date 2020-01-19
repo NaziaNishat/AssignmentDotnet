@@ -32,3 +32,7 @@ D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcore
 D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\AssignmentStudent.csproj.CopyComplete
 D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Students.g.cshtml.cs
 D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\Razor\Views\Home\GetDetails.g.cshtml.cs
+D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Create.g.cshtml.cs
+D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Edit.g.cshtml.cs
+D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Delete.g.cshtml.cs
+D:\DevFiles\dotnetProjects\AssignmentStudent\AssignmentStudent\obj\Debug\netcoreapp2.1\Razor\Views\Home\Success.g.cshtml.cs

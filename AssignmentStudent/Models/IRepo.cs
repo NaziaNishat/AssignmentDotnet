@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace AssignmentStudent.Models
 {
-    interface IRepo
+    public interface IRepo
 
     {
         List<Student> getAll();
 
-        void create(Student obj);
+        Student create(Student obj);
         void update(int id);
-        void retrieve(int id);
+        Student retrieve(int id);
         void delete(int id);
     }
 }

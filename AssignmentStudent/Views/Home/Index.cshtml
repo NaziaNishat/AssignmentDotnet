@@ -5,7 +5,9 @@
     <body>
         @foreach (var student in Model)
         {
-        <p>@student.id,@student.name,@student.department</p>
+            <p>@student.id,@student.name,@student.department</p>
+            <a href="/Home/Edit?id=@student.id">Edit</a>
+            <a href="/Home/Delete?id=@student.id">Delete</a>
 
         }
     </body>

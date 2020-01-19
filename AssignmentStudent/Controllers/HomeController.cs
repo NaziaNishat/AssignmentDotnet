@@ -19,6 +19,12 @@ namespace AssignmentStudent.Controllers
             return View(model);
         }
 
+        public IActionResult GetDetails(int id)
+        {
+            var model = repo.retrieve(id);
+            return View(model);
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

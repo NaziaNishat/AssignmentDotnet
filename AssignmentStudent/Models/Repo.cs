@@ -13,6 +13,7 @@ namespace AssignmentStudent.Models
         {
             studentsList = new List<Student>();
             studentsList.Add(new Student { id = 1, name = "nishat", department = "SWE" });
+            studentsList.Add(new Student { id = 2, name = "nazia", department = "SWE" });
 
         }
 
@@ -31,12 +32,17 @@ namespace AssignmentStudent.Models
             return studentsList;
         }
 
-        public void retrieve(int id)
+        public Student retrieve(int id)
+        {
+            return studentsList.FirstOrDefault(e => e.id == id );
+        }
+
+        public void update(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void update(int id)
+        void IRepo.retrieve(int id)
         {
             throw new NotImplementedException();
         }

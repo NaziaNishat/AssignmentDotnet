@@ -12,6 +12,7 @@ namespace AssignmentStudent.Controllers
     {
 
         IRepo repo;
+        int ID;
 
         public HomeController(IRepo repoImp)
         {
@@ -30,9 +31,12 @@ namespace AssignmentStudent.Controllers
             //System.Console.WriteLine("hlwwwwwwwwwwwwwww");
             //System.Diagnostics.Debug.WriteLine("aaaaaaaa");
 
-                        var model = repo.retrieve(id);
-                       return View(model);
-//            return View();
+
+            Student model = repo.retrieve(id);
+            ViewBag.Student = model;
+            //var model = repo.retrieve(id);
+            // return View(model);
+            return View();
         }
 
         public IActionResult Success()
@@ -55,10 +59,31 @@ namespace AssignmentStudent.Controllers
             return RedirectToAction("", new { id = newStudent.id });
         }
 
+        [HttpGet]
         public IActionResult Edit(int id)
         {
-            repo.update(id);
-            return View();
+
+            Student student = repo.update(id);
+ //           repo.update(id);
+            return View(student);
+        }
+
+        [HttpPost]
+        public RedirectToActionResult Edit(int id,Student student)
+        {
+            /*
+            if (student.id != 0)
+                repo.delete(student.id - 1);
+            else
+                repo.delete(0);
+                */
+
+            Student updatedStudent = repo.retrieve(id);
+            updatedStudent.name = student.name;
+            updatedStudent.department = student.department;
+            //Student newStudent = repo.create(new Student { id = student.id, name = student.name, department = student.department });
+            
+            return RedirectToAction("");
         }
 
         public IActionResult Delete(int id)

@@ -54,12 +54,12 @@ using AssignmentStudent.Models;
             WriteLiteral("\r\n<html>\r\n");
             EndContext();
             BeginContext(65, 291, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24b154afa0ed4befbb36a47609eb6a1b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1251061065dd4369962b49159b614190", async() => {
                 BeginContext(71, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(77, 270, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2319ae8b05b34016bd7cde2158be2c90", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4486c263d97a48daacd846a62dc75f97", async() => {
                     BeginContext(83, 2, true);
                     WriteLiteral("\r\n");
                     EndContext();

@@ -11,7 +11,7 @@ namespace AssignmentStudent.Models
         List<Student> getAll();
 
         Student create(Student obj);
-        void update(int id);
+        Student update(int id);
         Student retrieve(int id);
         void delete(int id);
     }

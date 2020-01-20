@@ -1,8 +1,24 @@
 ﻿
-@{
-    ViewData["Title"] = "Edit";
-}
+@model AssignmentStudent.Models.Student
 
-<h2>Edit</h2>
+<html>
+
+
+
+<form asp-controller="" asp-action="Edit" method="post">
+    <input hidden asp-for="id"/>
+    <div>
+        <label asp-for="name"></label>
+        <input asp-for="name" />
+    </div>
+    <div>
+        <label asp-for="department"></label>
+        <input asp-for="department" />
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+
+</form>
 
 

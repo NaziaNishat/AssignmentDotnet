@@ -3,11 +3,10 @@
 <html>
 <head>
     <body>
-    
-        @{ 
-            var student = ViewData["Student"] as AssignmentStudent.Models.Student;
-        }
-     <div>@student.name</div>
+
+        <div>@ViewBag.Student.id</div>
+        <div>@ViewBag.Student.name</div>
+        <div>@ViewBag.Student.department</div>
 
     </body>
 </head>

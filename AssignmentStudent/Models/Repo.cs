@@ -37,14 +37,9 @@ namespace AssignmentStudent.Models
             return studentsList;
         }
 
-        public Student retrieve(int id)
+        public Student get(int id)
         {
             return studentsList.FirstOrDefault(e => e.id == id );
-        }
-
-        public Student update(int id)
-        {
-            return studentsList.FirstOrDefault(e => e.id == id);
         }
 
 

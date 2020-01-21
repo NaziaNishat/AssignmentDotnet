@@ -1,15 +1,61 @@
-﻿@model IEnumerable<AssignmentStudent.Models.Student >
-
+﻿@model IEnumerable<AssignmentStudent.Models.Student>
+<!DOCTYPE html>
 <html>
 <head>
-    <body>
-        @foreach (var student in Model)
-        {
-            <p>@student.id,@student.name,@student.department</p>
-            <a href="/Home/Edit?id=@student.id">Edit</a>
-            <a href="/Home/Delete?id=@student.id">Delete</a>
-
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
         }
-    </body>
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 20%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
+<body>
+    <h3>
+        Add Student<a href="/Home/Create"> Here</a>
+    </h3>
+    <h2>Students Information:</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Edit Info</th>
+            <th>Delete Record</th>
+        </tr>
+    </table>
+    @foreach (var student in Model)
+    {
+        <table>
+            <tr>
+                <th>
+                    <a href="/Home/GetDetails?id=@student.id">@student.id</a>
+                </th>
+                <th>@student.name</th>
+                <th>@student.department</th>
+                <th>
+                    <a href="/Home/Edit?id=@student.id">Edit</a>
+                </th>
+                <th>
+                    <a href="/Home/Delete?id=@student.id">Delete</a>
+                </th>
+            </tr>
+        </table>
+
+    }
+    <h3>Click on ID to get details!</h3>
+
+
+</body>
 </html>

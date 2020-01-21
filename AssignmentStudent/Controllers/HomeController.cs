@@ -12,7 +12,6 @@ namespace AssignmentStudent.Controllers
     {
 
         IRepo repo;
-        int ID;
 
         public HomeController(IRepo repoImp)
         {
@@ -21,21 +20,14 @@ namespace AssignmentStudent.Controllers
 
         public IActionResult Index()
         {
-            //return Ok("Ok");
             var model = repo.getAll();
             return View(model);
         }
 
         public IActionResult GetDetails(int id)
         {
-            //System.Console.WriteLine("hlwwwwwwwwwwwwwww");
-            //System.Diagnostics.Debug.WriteLine("aaaaaaaa");
-
-
-            Student model = repo.retrieve(id);
+            Student model = repo.get(id);
             ViewBag.Student = model;
-            //var model = repo.retrieve(id);
-            // return View(model);
             return View();
         }
 
@@ -52,9 +44,7 @@ namespace AssignmentStudent.Controllers
         [HttpPost]
         public RedirectToActionResult Create(Student student)
         {
-            //System.Console.WriteLine("hlwwwwwwwwwwwwwww");
-            //repo.create(student);
-            //Console.WriteLine("Createeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+
             Student newStudent = repo.create(student);
             return RedirectToAction("", new { id = newStudent.id });
         }
@@ -63,25 +53,17 @@ namespace AssignmentStudent.Controllers
         public IActionResult Edit(int id)
         {
 
-            Student student = repo.update(id);
- //           repo.update(id);
+            Student student = repo.get(id);
             return View(student);
         }
 
         [HttpPost]
         public RedirectToActionResult Edit(int id,Student student)
         {
-            /*
-            if (student.id != 0)
-                repo.delete(student.id - 1);
-            else
-                repo.delete(0);
-                */
 
-            Student updatedStudent = repo.retrieve(id);
+            Student updatedStudent = repo.get(id);
             updatedStudent.name = student.name;
             updatedStudent.department = student.department;
-            //Student newStudent = repo.create(new Student { id = student.id, name = student.name, department = student.department });
             
             return RedirectToAction("");
         }

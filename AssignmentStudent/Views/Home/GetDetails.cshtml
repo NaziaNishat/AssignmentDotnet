@@ -1,13 +1,44 @@
-﻿@model AssignmentStudent.Models.Student
-
+﻿
+<!DOCTYPE html>
 <html>
 <head>
-    <body>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-        <div>@ViewBag.Student.id</div>
-        <div>@ViewBag.Student.name</div>
-        <div>@ViewBag.Student.department</div>
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 25%;
+        }
 
-    </body>
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
+<body>
+    <h2>Students Information</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+    </table>
+        <table>
+            <tr>
+                <th>@ViewBag.Student.id</th>
+                <th>@ViewBag.Student.name</th>
+                <th>@ViewBag.Student.department</th>
+            </tr>
+        </table>
+  
+
+</body>
 </html>
+

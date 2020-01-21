@@ -1,24 +1,30 @@
 ﻿
 @model AssignmentStudent.Models.Student
 
+<!DOCTYPE html>
 <html>
+<body>
+
+    <h2>Edit Information</h2>
+
+    <form asp-controller="" asp-action="Edit" method="post">
+        <input hidden asp-for="id" />
+        <div>
+            <label asp-for="name"></label>
+            <input asp-for="name" />
+        </div>
+        <div>
+            <label asp-for="department"></label>
+            <input asp-for="department" />
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
 
 
-
-<form asp-controller="" asp-action="Edit" method="post">
-    <input hidden asp-for="id"/>
-    <div>
-        <label asp-for="name"></label>
-        <input asp-for="name" />
-    </div>
-    <div>
-        <label asp-for="department"></label>
-        <input asp-for="department" />
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-
-</form>
+</body>
+</html>
 
 
